@@ -3,11 +3,15 @@
 <head>
 	<meta charset="UTF-8">
     <title>V-Model</title>
-  	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+		[v-cloak] { display: none; }
+		.hidden {display: none; }
+	</style>	  
 </head>
 
 <body>
-	<div id="vmodel">
+	<div id="vmodel" class="hidden">
 		<input type="text" v-model.trim="message" />
 		<button @click="log">Log to console</button>
 		<button @click="setValue">Set value</button>
@@ -21,6 +25,22 @@
 
 		<input type="checkbox" v-model="isSelected" />
 	</div>
+
+	<div id="vcloak" v-cloak  class="hidden">
+		<ul>
+			<li v-for="user in users">{{user.name}}</li>
+		</ul>
+	</div>
+
+	<div id="slots">		
+		<v-select>
+			<option value="">Select</option>
+			<option value="foo">Foo</option>
+			<option value="bar">Bar</option>
+			<option value="baz">Baz</option>
+		</v-select>
+	</div>
+
 	<script src="https://unpkg.com/vue"></script>
 	<script src="app.js"></script>
 </body>
