@@ -1,0 +1,34 @@
+{
+	"cart": [
+		{
+		  "url": "https://www.amazon.com/dp/B071R3MYVY?psc=1",
+		  "image": "https://images-na.ssl-images-amazon.com/images/I/61G3SXb%2BGLL._SL1024_.jpg",
+		  "name": "MsMr Travel Mug If You Love A Sailor Raiseyour Glass Funny and Creative Design Insulated Stainless Steel Travel Mug 14 oz",
+		  "seller": "Fıtı",
+		  "isAvailable": true,
+			"isShipping": false,
+			"price": "19.99"
+		},
+		{
+		  "url": "https://www.amazon.com/dp/B00H9DVTA6/ref=psdc_367142011_t3_B00PC9UZY0",
+		  "image": "https://images-na.ssl-images-amazon.com/images/I/71fNaEaO2QL._SL1200_.jpg",
+		  "name": "JOCO Glass Reusable 12oz Coffee Cup (Black)",
+		  "seller": "Cup",
+		  "isAvailable": true,
+		  "isShipping": true,
+			"price": "49.99"
+		}
+	],
+
+	"saved": [
+		{
+		  "url": "https://www.amazon.com/dp/B00PC9UZY0/ref=strm_fun_79_nad_1_4",
+		  "image": "https://images-na.ssl-images-amazon.com/images/I/81AqQtLfvKL._AC_SR300,500_.jpg",
+		  "name": "KeepCup Brew Glass Reusable Coffee Cup, 12 oz/Medium, Filter",
+		  "seller": "KeepCup",
+		  "isAvailable": true,
+		  "isShipping": true,
+			"price": "59.99"
+		}
+	]
+}
