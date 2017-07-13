@@ -49,6 +49,11 @@
 	<div id="modifiers">
 		<a href="/foo" @click.prevent="log">Go to Foo </a> <!-- prevent : link property cancel  -->
 		<button @click.once="log">Button</button> <!-- once : for just one time click -->
+		
+		<input @keyup="log" /> <!-- keyup : when any key click, log execute -->
+		<input @keyup.enter="log" /> <!-- keyup : when enter key click, log execute -->
+		<input @keyup.a="log" /> <!-- keyup : when a key click, log execute -->
+	
 	</div>
 
 	<script src="https://unpkg.com/vue"></script>

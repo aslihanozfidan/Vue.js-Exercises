@@ -58,6 +58,8 @@ window.addEventListener('load', () => {
         }
     })
 
+
+    Vue.config.keyCodes.a = 65;
     new Vue({
         el: '#modifiers',
         methods: {          
