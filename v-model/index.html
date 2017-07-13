@@ -32,13 +32,23 @@
 		</ul>
 	</div>
 
-	<div id="slots">		
+	<div id="slots" class="hidden">		
 		<v-select>
 			<option value="">Select</option>
 			<option value="foo">Foo</option>
 			<option value="bar">Bar</option>
 			<option value="baz">Baz</option>
 		</v-select>
+	</div>
+
+	<div id="nextTick" class="hidden">		
+		{{ message }}
+		<button @click="change">Change message</button>
+	</div>
+
+	<div id="modifiers">
+		<a href="/foo" @click.prevent="log">Go to Foo </a> <!-- prevent : link property cancel  -->
+		<button @click.once="log">Button</button> <!-- once : for just one time click -->
 	</div>
 
 	<script src="https://unpkg.com/vue"></script>

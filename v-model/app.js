@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
                 this.selectedVal = 'baz';
             }
         }
-    }),
+    });
 
     setTimeout(() => {  
         new Vue({
@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
                 users: [ { name: 'Aslıhan' }, { name: 'Burak' } ]
             }
         })
-    }, 3000)
+    }, 3000);
 
     Vue.component('v-select', {
         template: `
@@ -31,14 +31,39 @@ window.addEventListener('load', () => {
                 <slot></slot>
             </select>
         `
-    })
+    });
 
      Vue.component('v-option', {
         props: [ 'value' ],
         template: `
             <option>{{value}}</option>
         `
+    });
+
+    new Vue({ el: '#slots' });
+
+    new Vue({
+        el: '#nextTick',
+        data: {
+            message: 'Hello world'
+        },
+        methods: {          
+            change() {
+                this.message = 'Hello!';
+                console.log(document.querySelector('#nextTick').innerText);
+                this.$nextTick(() => {
+                    console.log(document.querySelector('#nextTick').innerText);
+                })
+            }
+        }
     })
 
-    new Vue({ el: '#slots' })
+    new Vue({
+        el: '#modifiers',
+        methods: {          
+            log() {
+                console.log('Fooooooo');                
+            }
+        }
+    })
 });
