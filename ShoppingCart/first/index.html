@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>Shopping Cart</title>
+  	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div id="app">
+		<p v-if="isLoading">Loading</p>
+		<div class="title-container">Shopping Cart</div>
+		<p v-if="!cart.length">No item in cart...</p>
+		<div class="product-container" v-for="(item, index) in cart">
+			<div class="product-image">
+				<img v-bind:src="item.image" />
+			</div>
+			<div class="product-info">
+				<a class="product-title" v-bind:href="item.url">{{ item.name }}</a><span class="price-container">${{ item.price }}</span>
+				<div class="product-owner">by {{ item.seller }}</div>
+				<div class="product-stock" v-if="item.isAvailable">In Stock</div>
+				<div class="product-shipping" v-if="item.isShipping">This item has free ship to Turkey.</div>	
+				<div class="product-situation">
+					<a href="#" class="product-delete" v-on:click="removeFromCart(index)">Delete</a>	
+					|				
+					<a href="#" class="product-later" v-on:click="saveForLater(index)">Save for later</a>
+				</div>				
+			</div>
+		</div>
+		<div class="total-price-container">Subtotal {{ cart.length }} items: ${{ cartTotal }} </div>
+
+		
+		<div class="title-container">Save for later ({{ saved.length }})</div>
+		<div class="product-container" v-for="(item, index) in saved">
+			<div class="product-image">
+				<img v-bind:src="item.image" />
+			</div>
+			<div class="product-info">
+				<a class="product-title" v-bind:href="item.url">{{ item.name }}</a>
+				<div class="product-owner">by {{ item.seller }}</div>
+				<div class="product-stock" v-if="item.isAvailable">In Stock</div>
+				<div class="product-shipping" v-if="item.isShipping">This item has free ship to Turkey.</div>	
+				<div class="product-situation">
+					<a href="#" class="product-delete" v-on:click="removeFromSavedList(index)">Delete</a>	
+					|				
+					<a href="#" class="product-later" v-on:click="moveToCart(index)">Move to cart</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="app.js"></script>
+</body>
+
+</html>
